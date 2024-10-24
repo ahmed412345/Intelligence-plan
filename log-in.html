@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            *{
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            main{
+                background: url(pic/wallpaperflare.com_walalpaper.jpg) center/cover no-repeat rgba(0, 0, 0, 0.493);
+                background-blend-mode: multiply;
+                height:100vh;
+                display: flex;
+                align-items: center;
+                direction: rtl;
+            
+            }
+            .sin{
+                background-color: #9A7E6F;
+                border-radius: 10px;
+                box-shadow: 1px 1px 10px black;
+                padding: 30px;
+                width: 400px;
+                margin:auto;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 20px;
+            }
+            @media screen and (max-width:500px) {
+                .sin{
+                    width: 350px;
+                    padding: 10px;
+                }
+            }
+            .sin img{
+                width:100px;
+            
+            }
+            .sin form{
+                display: flex;
+                flex-direction: column;
+                gap: 30px;
+            }
+            input{
+                background-color: #9A7E6F ;
+                border: none;
+                outline: none;
+                padding: 10px;
+                border-bottom: 1px solid #eee;
+                font-size:20px;
+                transition: .3s;
+                color: white;
+                direction: ltr;
+            }
+            input:hover{
+                border-bottom: 2px solid #fff;
+            }
+            input:focus{
+                border-bottom: 2px solid #fff;
+            }
+            input::placeholder{
+                color: white;
+            }
+            #submit{
+                width: 100px;
+                height:50px;
+                border-radius: 20px;
+                border: none;
+                background-color: #DFF2EB;
+                transition: .3s;
+                cursor: pointer;
+                margin: auto;
+                font-size: 20px;
+                user-select: none;
+            }
+            #submit:hover{
+                background-color: #CBD2A4;
+                color: rgb(15, 70, 60);
+            }
+            p{
+                color: #EEEEEE;
+            }
+            a{
+                color: #A2D2DF;
+                text-decoration: none;
+                transition: .3s;
+            }
+            a:hover{
+                color: #fff;
+            }
+            .but{
+                display: flex;
+                gap: 5px;
+                margin: auto;
+                flex-wrap: wrap;
+            }
+            .but button{
+                font-size: 20px;
+                padding: 5px;
+                border: none;
+                cursor: pointer;
+                background-color: transparent;
+                color: white;
+                font-family: monospace;
+                transition: .3s;
+            }
+            .but button:hover{
+                color: #5eb6c5;
+            }
+            .but button.click{
+                border-bottom: 2px solid #00d9ff;
+                color: rgb(0, 217, 255);
+            }
+        </style>
+        <title>log in</title>
+    </head>
+    <body>
+        <main>
+            <div class="sin">
+                <a href="index.html"><img src="pic/logo/Screenshot_1-removebg-preview.png" alt=""></a>
+                <div class="but">
+                    <button id="chat" onclick="chatF()">ChatGPT</button>
+                    <button id="cop" onclick="copF()">Copilot</button>
+                    <button id="jas" onclick="jasF()">jasper</button>
+                    <button id="deep" onclick="deepF()">DeepL</button>
+                </div>
+                <form>
+                    <input type="email" placeholder="Email address" id="email">
+                    <input type="password" placeholder="password" id="pass">
+                    <button  onclick="send(event)" id="submit">log in</button>
+                </form>
+                <a href="register.html">register</a><a href="">?Forgot password</a>
+            </div>
+        </main>
+        <script>
+            let chat = document.getElementById('chat');
+            let butS = window.getComputedStyle(chat);
+            let cop = document.getElementById('cop');
+            let copS = window.getComputedStyle(cop);
+            let jas = document.getElementById('jas');
+            let jasS = window.getComputedStyle(jas);
+            let deep = document.getElementById('deep');
+            let deepS = window.getComputedStyle(deep);
+            let email = document.getElementById('email')
+            let pass = document.getElementById('pass')
+            function chatF(){
+                chat.classList.add('click');
+                cop.classList.remove('click');
+                jas.classList.remove('click');
+                deep.classList.remove('click');
+            }
+            function copF(){
+                cop.classList.add('click');
+                chat.classList.remove('click');
+                jas.classList.remove('click');
+                deep.classList.remove('click');
+            }
+            function jasF(){
+                jas.classList.add('click');
+                chat.classList.remove('click');
+                cop.classList.remove('click');
+                deep.classList.remove('click');
+            }
+            function deepF(){
+                deep.classList.add('click');
+                chat.classList.remove('click');
+                cop.classList.remove('click');
+                jas.classList.remove('click');
+            }
+            function send(event){
+                event.preventDefault();
+                if(!email.value || !pass.value){
+                    if(!email.value){
+                        email.style.borderBottom = '1px solid red'
+                    }else{
+                        email.style.borderBottom = '1px solid green'
+                    }
+                    if(!pass.value){
+                        pass.style.borderBottom = '1px solid red'
+                    }else{
+                        pass.style.borderBottom = '1px solid green'
+                    }
+                }else{
+                    if(butS.color == 'rgb(0, 217, 255)'){
+                        window.location.href = 'https://chatgpt.com/';
+                    }else if(copS.color == 'rgb(0, 217, 255)'){
+                        window.location.href = 'https://copilot.microsoft.com/';
+                    }else if(jasS.color == 'rgb(0, 217, 255)'){
+                        window.location.href = 'https://www.jasper.ai/';
+                    }else if(deepS.color == 'rgb(0, 217, 255)'){
+                        window.location.href = 'https://www.deepl.com/en/translator';
+                    }else{
+                        window.alert('please choose your account type')
+                    }
+                }
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,267 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+    color: white;
+}
+@font-face {
+    font-family:main-font;
+    src: url(../fonts/Lemonada-VariableFont_wght.ttf);
+}
+@font-face {
+    font-family: logo-font;
+    src: url(../fonts/Agdasima-Bold.ttf);
+}
+:root{
+    --main-color: #111827;
+    --second-color: white;
+    --third-color: #3620d8;
+}
+main{
+    background: url(../pic/wallpaperflare.com_wallpaper\ \(2\).jpg) center/cover no-repeat rgba(0, 0, 0, 0.233) fixed;
+    background-blend-mode: multiply;
+    min-height: 100vh;
+}
+main header{
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+main header button{
+    display: none;
+}
+main header aside {
+    display: flex;
+    gap: 20px;
+}
+main header aside > a{
+    color: white;
+    text-decoration: none;
+    font-size: 30px;
+    font-family: logo-font;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+}
+main header div{
+    display: flex;
+    gap: 30px;
+}
+main header div a{
+    font-size: 20px;
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    box-shadow: 1px 1px 10px black;
+    border-radius: 10px;
+    transition: .3s;
+    display: flex;
+    align-items: center;
+
+}
+main header div a:nth-child(1){
+    background-color: rgba(255, 255, 255, 0.39);
+}
+main header div a:nth-child(2){
+    background-color:rgb(0, 132, 255);
+}
+main header div a:hover{
+    background-color: rgba(14, 206, 62, 0.76);
+}
+main nav{
+    display: flex;
+}
+main nav ul{
+    list-style: none;
+    font-size: 20px;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    white-space: nowrap;
+}
+main nav ul a{
+    color: white;
+    text-decoration: none;
+    width: 100%;
+    border-radius: 20px;
+    transition: .3s;
+    white-space: pre;
+    font-family: main-font ,monospace;
+}
+main nav ul a:hover{
+    color: #46cfcfa2;
+}
+.fa-solid{
+    display: none;
+}
+@media screen and (max-width:1050px) {
+    main header button{
+        display: flex;
+        align-items: center;
+        font-size: 40px;
+        color: white;
+        width: fit-content;
+        height: fit-content;
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        transition: .3s;
+        margin-top: 10px;
+    }
+    main header button:hover{
+        color: #46cfcfa2;
+    }
+    main nav ul{
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100px;
+        left: 20px;
+        background-color: rgba(0, 0, 0, 0.39);
+        padding: 20px;
+        gap: 10px;
+    }
+    main nav ul li{
+        width: 100%;
+        text-align: center;
+    }
+    main nav ul a{
+        width: 100%;
+        padding: 20px;
+        display: inline-block;
+    }
+    main nav ul a:hover{
+        background-color: rgba(255, 255, 255, 0.445);
+        color: white;
+        border-radius: 0;
+    }
+    .fa-solid{
+        display: inline-block;
+    }
+}
+@media screen and (max-width:650px) {
+    main header{
+        justify-content: center;
+    }
+
+}
+article{
+    height: 100vh;
+}
+.one{
+    display: grid;
+    padding: 10px;
+    grid-template-areas: 
+    'p1 img1 p2'
+    'p3 img2 img3';
+    gap: 20px;
+}
+.one p{
+    color: white;
+    font-family: main-font;
+    border-radius: 10px;
+    box-shadow: 1px 1px 10px black;
+    background-color: rgba(255, 255, 255, 0.226);
+    text-align: justify;
+    padding: 10px;
+}
+.one img{
+    width: 100%;
+    border-radius: 10px;
+}
+.one p:nth-of-type(1){
+    grid-area:p1;
+}
+.one p:nth-of-type(2){
+    grid-area:p2;
+}
+.one p:nth-of-type(3){
+    grid-area:p3;
+}
+.one img:nth-of-type(1){
+    grid-area: img1;
+}
+.one img:nth-of-type(2){
+    grid-area: img2;
+}
+.one img:nth-of-type(3){
+    grid-area: img3;
+}
+@media screen and (max-width:1200px){
+    .one{
+        grid-template-areas: 
+        'p1 img1'
+        'img2 p2'
+        'p3 img3';
+        gap: 20px;
+    }
+} 
+@media screen and (max-width:800px){
+    .one{
+        grid-template-areas: 
+        'p1'
+        'img1'
+        'p2'
+        'img2'
+        'p3'
+        'img3';
+        gap: 20px;
+    }
+}
+section:not(.one){
+    text-align: center;
+    font-family: main-font;
+
+}
+section h2{
+    font-size: 40px;
+
+}
+section h3{
+    font-size: 25px;
+}
+
+section > div{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+.price{
+    background-color: rgba(0, 0, 0, 0.308);
+    padding: 20px;
+    margin: 10px;
+    border-radius: 20px;
+    box-shadow: 1px 1px 10px rgb(255, 255, 255);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+
+}
+section button{
+    display: block;
+    font-size: 40px;
+    color: rgb(255, 255, 255);
+    border-radius: 10px;
+    background-color: transparent;
+    border: 1px solid rgb(255, 255, 255);
+    box-shadow: 1px 1px 10px white ;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: .3s;
+}
+section button:hover{
+    background-color: rgb(83, 105, 50);
+}
+section ul{
+    list-style: decimal inside;
+    text-align: start;
+    font-size: 20px;
+}
+.price span{
+    font-size: 20px;
+}

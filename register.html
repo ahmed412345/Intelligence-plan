@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            *{
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            main{
+                background: url(pic/wallpaperflare.com_wallpaper\ \(1\).jpg) center/cover no-repeat;
+                height:100vh;
+                display: flex;
+                align-items: center;
+            
+            }
+            div{
+                background-color: #5597bd;
+                border-radius: 10px;
+                box-shadow: 1px 1px 10px black;
+                padding: 30px;
+                text-align: center;
+                width: 400px;
+                height: 500px;
+                margin-left: 10%;
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+            }
+            @media screen and (max-width:500px) {
+                div{
+                    width: 350px;
+                    height: 450px;
+                    padding: 10px;
+                    margin: auto;
+                }
+            }
+            div img{
+                width:100px;
+            
+            }
+            div form{
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+            }
+            input{
+                background-color: #5597bd ;
+                border: none;
+                outline: none;
+                padding: 10px;
+                border-bottom: 1px solid #eee;
+                font-size:20px;
+                transition: .3s;
+                color: white;
+            }
+            input:hover{
+                border-bottom: 2px solid #fff;
+            }
+            input:focus{
+                border-bottom: 2px solid #fff;
+            }
+            input::placeholder{
+                color: white;
+            }
+            button{
+                width: 100px;
+                height:50px;
+                border-radius: 20px;
+                border: none;
+                background-color: #DFF2EB;
+                transition: .3s;
+                cursor: pointer;
+                margin: auto;
+                font-size: 20px;
+                user-select: none;
+            }
+            button:hover{
+                background-color: #FFCF9D;
+                color: rgb(15, 70, 60);
+            }
+            p{
+                color: #EEEEEE;
+            }
+            a{
+                color: aqua;
+                text-decoration: none;
+                transition: .3s;
+            }
+            a:hover{
+                color: #ddd;
+            }
+        </style>
+        <title>register</title>
+    </head>
+    <body>
+        <main>
+            <div>
+                <a href="index.html"><img src="pic/logo/Screenshot_1-removebg-preview.png" alt=""></a>
+                <form action="">
+                    <input type="text" placeholder="Your name">
+                    <input type="email" placeholder="Email address">
+                    <input type="password" placeholder="password">
+                    <button onclick="send(event)">register</button>
+                </form>
+                <p>Already have an account? <a href="log-in.html">Log in here</a></p>
+            </div>
+        </main>
+        <script>
+            function  send(event){
+                event.preventDefault();
+                window.location.href = 'log-in.html';
+            }
+        </script>
+    </body>
+</html>
