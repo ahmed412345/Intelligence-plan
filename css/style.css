@@ -265,3 +265,6 @@ section ul{
 .price span{
     font-size: 20px;
 }
+.opcl{
+    display: flex;
+}
