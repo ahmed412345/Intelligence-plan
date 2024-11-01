@@ -12,11 +12,11 @@
         <main>
             <header>
                 <aside>
-                    <button onclick=" menuF()" id="button"><i class="fa-solid fa-bars"></i></button>
+                    <button id="button"><i class="fa-solid fa-bars"></i></button>
                     <a href="index.html"><h1>Intelligence plan</h1></a>
                 </aside>
                 <nav>
-                        <ul id="menu">
+                        <ul id="menu" class="opcl">
                             <li><a href="index.html">Home </a></li>
                             <li><a href="our-services.html">Our Services </i></a></li>
                             <li><a href="contact.html">Contact Us</a></li>
@@ -40,13 +40,15 @@
         <script>
             let menu = document.getElementById('menu');
             let button = document.getElementById('button')
-            function menuF(){
-            if(menu.style.display === 'none'){
-                menu.style.display = 'flex'
-            }else{
-                menu.style.display = 'none'
+            button.onclick = function(event){
+                event.stopPropagation();
+                menu.classList.toggle('opcl');
             }
-        }       
+            document.onclick = function(event){
+                if(!menu.contains(event.target)){
+                    menu.classList.remove('opcl')
+                }
+            }
         </script>
     </body>
 </html>
